@@ -181,6 +181,11 @@
             font-weight: 600;
             color: #333;
           }
+
+          .main-color {
+            background-color: #004494;
+            color: white;
+          }
         </style>
       </head>
 
@@ -213,7 +218,7 @@
               </div>
               <div class="form-group col-md-6">
                 <label for="birth-date">Tanggal Lahir</label>
-                <input type="date" class="form-control" id="birth-date" placeholder="Masukkan Tanggal Lahir" required>
+                <input type="date" class="form-control" id="birth-date" placeholder="Masukkan Tempat Lahir" required>
               </div>
             </div>
 
@@ -311,236 +316,250 @@
         function loadNextForm() {
           const formContainer = document.getElementById('form-container');
           formContainer.innerHTML = `
-                      <h2>FR.APL.02. ASESMEN MANDIRI</h2>
-                      <div class="section-title">Skema Sertifikasi: PEMELIHARAAN DAN PERBAIKAN KOMPUTER</div>
-                      <p><strong>Nomor Judul:</strong> SKM/0382/00010/3/2019/15</p>
-                      <p><strong>PANDUAN ASESMEN MANDIRI:</strong> Baca setiap pertanyaan di kolom sebelah kiri. Beri tanda centang (V) pada kotak jika Anda yakin dapat melakukan tugas yang dijelaskan.</p>
-                     <p><strong>Unit Kompetensi : Mengidentifikasi Perangkat Penyusun Komputer</p>
-                      <p><strong>Kode Unit : J.620900.001.02</p>
-                     
+             <h2>FR.APL.02. ASESMEN MANDIRI</h2>
+          <div class="section-title">Skema Sertifikasi: PEMELIHARAAN DAN PERBAIKAN KOMPUTER</div>
+          <p><strong>Nomor Judul:</strong> SKM/0382/00010/3/2019/15</p>
+          <p><strong>PANDUAN ASESMEN MANDIRI:</strong><br>
+          <ul>
+            <li>Baca setiap pertanyaan di kolom sebelah kiri.</li>
+            <li>Pilih salah satu opsi (K = Kompeten atau BK = Belum Kompeten) jika Anda yakin dapat melakukan tugas yang
+              dijelaskan</li>
+          </ul>
+          </p>
 
-                      <form id="form-step2">
-                        
-                              <h5>Elemen 1: Mempersiapkan Perangkat Penyusunan Komputer</h5>
-    
-    <!-- Sub-element 1.1 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <label>Dapatkah saya?</label>
-            <p>1.1 Menyiapkan tempat perangkat penyusun komputer dalam keadaan kering, bersih, dan aman</p>
-            
-            <div>
-                <input type="radio" id="task1-1-yes" name="task1-1" value="yes" required>
-                <label for="task1-1-yes">K</label>
-            </div>
+          <form id="form-step2">
+            <p><strong>Unit Kompetensi : Mengidentifikasi Perangkat Penyusun Komputer</p>
+            <p><strong>Kode Unit : J.620900.001.02</p>
+            <table class="table table-bordered">
+              <thead class="table-primary">
+                <tr>
+                  <th colspan="2" class="text-center">Dapatkah Saya?</th>
+                  <th class="text-center">K</th>
+                  <th class="text-center">BK</th>
+                  <th class="text-center">Bukti</th>
+                </tr>
+              </thead>
+              <tbody class="fw-normal">
+                <tr>
+                  <td>Elemen 1</td>
+                  <td>Mempersiapkan Perangkat Penyusun Komputer</td>
+                  <td>
+                    <input type="radio" name="task1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task1-1" value="no"> BK
+                  </td>
+                  <td rowspan="5">Mengacu APL01</br>(Bagian 3 No.1)</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Kriteria Unjuk Kerja:</td>
+                </tr>
+                <tr>
+                  <td>1.1</td>
+                  <td>Menyiapkan tempat perangkat penyusun komputer dalam keadaan kering, bersih, dan aman</td>
+                  <td>
+                    <input type="radio" name="task1-1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task1-1-1" value="no"> BK
+                  </td>
+                </tr>
+                <tr>
+                  <td>1.2</td>
+                  <td>Menyiapkan perlengkapan untuk penyusun komputer</td>
+                  <td>
+                    <input type="radio" name="task1-2" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task1-2" value="no"> BK
+                  </td>
+                </tr>
+                <tr>
+                  <td>1.3</td>
+                  <td>Menyiapkan perangkat penyusun komputer dan buku manual</td>
+                  <td>
+                    <input type="radio" name="task1-2" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task1-2" value="no"> BK
+                  </td>
+                </tr>
+                <tr class="elemen-table">
+                  <td>Elemen 2</td>
+                  <td>Mengidentifikasi Perangkat Penyusun Komputer</td>
+                  <td>
+                    <input type="radio" name="task2-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task2-1" value="no"> BK
+                  </td>
+                  <td rowspan="5">Mengacu APL01</br>(Bagian 3 No.1)</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Kriteria Unjuk Kerja:</td>
+                </tr>
+                <tr>
+                  <td>2.1</td>
+                  <td>Memahami buku manual perangkat penyusun komputer</td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="no"> BK
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.2</td>
+                  <td>Mendaftar perangkat penyusun komputer sesuai spesifikasi</td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="no"> BK
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.3</td>
+                  <td>Mengelompokkan perangkat penyusun komputer sesuai daftar</td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="no"> BK
+                  </td>
+                </tr>
+                <tr class="elemen-table">
+                  <td>Elemen 3</td>
+                  <td>Memeriksa Hasil Identifikasi Perangkat Penyusun Komputer</td>
+                  <td>
+                    <input type="radio" name="task3-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task3-1" value="no"> BK
+                  </td>
+                  <td rowspan="4">Mengacu APL01</br>(Bagian 3 No.1)</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Kriteria Unjuk Kerja:</td>
+                </tr>
+                <tr>
+                  <td>3.1</td>
+                  <td>Mengidentifikasi perangkat penyusun komputer sesuai hasil identifikasi</td>
+                  <td>
+                    <input type="radio" name="task3-1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task3-1-1" value="no"> BK
+                  </td>
+                </tr>
+                <tr>
+                  <td>3.2</td>
+                  <td>Meletakkan perangkat penyusun komputer pada tempat yang kering, bersih, aman</td>
+                  <td>
+                    <input type="radio" name="task3-1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task3-1-1" value="no"> BK
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-            <div>
-                <input type="radio" id="task1-1-no" name="task1-1" value="no">
-                <label for="task1-1-no">BK</label>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Sub-element 1.2 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>1.2 Menyiapkan perlengkapan untuk penyusun komputer</p>
-            
-            <div>
-                <input type="radio" id="task1-2-yes" name="task1-2" value="yes" required>
-                <label for="task1-2-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task1-2-no" name="task1-2" value="no">
-                <label for="task1-2-no">BK</label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sub-element 1.3 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>1.3 Menyiapkan perangkat penyusun komputer dan buku manual</p>
-            
-            <div>
-                <input type="radio" id="task1-3-yes" name="task1-3" value="yes" required>
-                <label for="task1-3-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task1-3-no" name="task1-3" value="no">
-                <label for="task1-3-no">BK</label>
-            </div>
-        </div>
-    </div>
-    
-    <h5>Elemen 2: Mengidentifikasi Perangkat Penyusun Komputer</h5>
-    
-    <!-- Sub-element 2.1 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>2.1 Memahami buku manual perangkat penyusun komputer</p>
-            
-            <div>
-                <input type="radio" id="task2-1-yes" name="task2-1" value="yes" required>
-                <label for="task2-1-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task2-1-no" name="task2-1" value="no">
-                <label for="task2-1-no">BK</label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sub-element 2.2 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>2.2 Mendaftar perangkat penyusun komputer sesuai spesifikasi</p>
-            
-            <div>
-                <input type="radio" id="task2-2-yes" name="task2-2" value="yes" required>
-                <label for="task2-2-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task2-2-no" name="task2-2" value="no">
-                <label for="task2-2-no">BK</label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sub-element 2.3 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>2.3 Mengelompokkan perangkat penyusun komputer sesuai daftar</p>
-            
-            <div>
-                <input type="radio" id="task2-3-yes" name="task2-3" value="yes" required>
-                <label for="task2-3-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task2-3-no" name="task2-3" value="no">
-                <label for="task2-3-no">BK</label>
-            </div>
-        </div>
-    </div>
-
-    <h5>Elemen 3: Memeriksa Hasil Identifikasi Perangkat Penyusun Komputer</h5>
-    
-    <!-- Sub-element 3.1 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>3.1 Mengidentifikasi perangkat penyusun komputer sesuai hasil identifikasi</p>
-            
-            <div>
-                <input type="radio" id="task3-1-yes" name="task3-1" value="yes" required>
-                <label for="task3-1-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task3-1-no" name="task3-1" value="no">
-                <label for="task3-1-no">BK</label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sub-element 3.2 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>3.2 Meletakkan perangkat penyusun komputer pada tempat yang kering, bersih, aman</p>
-            
-            <div>
-                <input type="radio" id="task3-2-yes" name="task3-2" value="yes" required>
-                <label for="task3-2-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task3-2-no" name="task3-2" value="no">
-                <label for="task3-2-no">BK</label>
-            </div>
-        </div>
-    </div>    
-
-     <p><strong>Unit Kompetensi : Mengidentifikasi Spesifikasi Perangkat Komputer</p>
-     <p><strong>Kode Unit : J.620900.002.02</p>
-     <h6>Elemen 1:  Mengidentifikasi Spesifikasi Perangkat Komputer</h6>
-    <!-- Sub-element 1.1 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <label>Dapatkah saya?</label>
-            <p>1.1 Meelusuri sumber informasi agar keabsahan informasi pengetahuan dasar komunikasi sesuai dengan kebutuhan</p>
-            
-            <div>
-                <input type="radio" id="task1-1-yes" name="task1-1" value="yes" required>
-                <label for="task1-1-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task1-1-no" name="task1-1" value="no">
-                <label for="task1-1-no">BK</label>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Sub-element 1.2 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>1.2 Menunjukan materi informasi secara sistematis sesuai dengan proses komunikasi</p>
-            
-            <div>
-                <input type="radio" id="task1-2-yes" name="task1-2" value="yes" required>
-                <label for="task1-2-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task1-2-no" name="task1-2" value="no">
-                <label for="task1-2-no">BK</label>
-            </div>
-        </div>
-    </div>
-    <h5>Elemen 2: Mengidentifikasi Spesifikasi Perangkat Komputer</h5>
-    
-    <!-- Sub-element 2.1 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>2.1 Membaca buku manual beberapa komputer</p>
-            
-            <div>
-                <input type="radio" id="task2-1-yes" name="task2-1" value="yes" required>
-                <label for="task2-1-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task2-1-no" name="task2-1" value="no">
-                <label for="task2-1-no">BK</label>
-            </div>
-        </div>
-    </div>
-
-    <!-- Sub-element 2.2 -->
-    <div class="form-row">
-        <div class="form-group col-md-12">
-            <p>2.2 Mempelajari beberapa keunggulan dan kekurangan beberapa perangkat komputer</p>
-            
-            <div>
-                <input type="radio" id="task2-2-yes" name="task2-2" value="yes" required>
-                <label for="task2-2-yes">K</label>
-            </div>
-
-            <div>
-                <input type="radio" id="task2-2-no" name="task2-2" value="no">
-                <label for="task2-2-no">BK</label>
-            </div>
-        </div>
-    </div>
-
-            </div>    
-            <button type="submit" class="btn-primary">Kirim</button>
-            </form>
+            <p><strong>Unit Kompetensi : Mengidentifikasi Spesifikasi Perangkat Komputer</p>
+            <p><strong>Kode Unit : J.620900.002.02</p>
+            <table class="table table-bordered">
+              <thead class="table-primary">
+                <tr>
+                  <th colspan="2" class="text-center">Dapatkah Saya?</th>
+                  <th class="text-center">K</th>
+                  <th class="text-center">BK</th>
+                  <th class="text-center">Bukti</th>
+                </tr>
+              </thead>
+              <tbody class="fw-normal">
+                <tr>
+                  <td>Elemen 1</td>
+                  <td>Mengidentifikasi Spesifikasi Perangkat Komputer</td>
+                  <td>
+                    <input type="radio" name="task1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task1-1" value="no"> BK
+                  </td>
+                  <td rowspan="4">Mengacu APL01</br>(Bagian 3 No.1)</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Kriteria Unjuk Kerja:</td>
+                </tr>
+                <tr>
+                  <td>1.1</td>
+                  <td>Menelusuri sumber informasi agar keabsahan informasi pengetahuan dasar komunikasi sesuai dengan
+                    kebutuhan</td>
+                  <td>
+                    <input type="radio" name="task1-1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task1-1-1" value="no"> BK
+                  </td>
+                </tr>
+                <tr>
+                  <td>1.2</td>
+                  <td>Menunjukan materi informasi secara sistematis sesuai dengan proses komunikasi</td>
+                  <td>
+                    <input type="radio" name="task1-2" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task1-2" value="no"> BK
+                  </td>
+                </tr>
+                <tr class="elemen-table">
+                  <td>Elemen 2</td>
+                  <td>Mengidentifikasi Spesifikasi Perangkat Komputer</td>
+                  <td>
+                    <input type="radio" name="task2-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task2-1" value="no"> BK
+                  </td>
+                  <td rowspan="4">Mengacu APL01</br>(Bagian 3 No.1)</td>
+                </tr>
+                <tr>
+                  <td colspan="4">Kriteria Unjuk Kerja:</td>
+                </tr>
+                <tr>
+                  <td>2.1</td>
+                  <td>Membaca buku manual beberapa komputer</td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="no"> BK
+                  </td>
+                </tr>
+                <tr>
+                  <td>2.2</td>
+                  <td>Mempelajari beberapa keunggulan dan kekurangan beberapa perangkat komputer</td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="yes" required> K
+                  </td>
+                  <td>
+                    <input type="radio" name="task2-1-1" value="no"> BK
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <input type="checkbox" id="confirm-checkbox">
+            <label for="confirm-checkbox" class="fw-medium">Pastikan Anda sudah mengisi semua dengan benar</label>
+            <button type="submit" class="btn-primary my-5" id="submit-button" disabled>Kirim</button>
+          </form>
                   `;
+          // Mengaktifkan atau menonaktifkan tombol kirim berdasarkan checkbox
+          const checkbox = document.getElementById('confirm-checkbox');
+          const submitButton = document.getElementById('submit-button');
+
+          checkbox.addEventListener('change', function () {
+            submitButton.disabled = !this.checked; // Aktifkan tombol jika checkbox dicentang
+          });
         }
       </script>
     </body>
