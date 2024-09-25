@@ -2083,6 +2083,6 @@ table {
 
 @media (max-width: 768px) {
   .table {
-    font-size: 14px; /* Sesuaikan ukuran font jika perlu */
+    font-size: 11px; /* Sesuaikan ukuran font jika perlu */
   }
 }
